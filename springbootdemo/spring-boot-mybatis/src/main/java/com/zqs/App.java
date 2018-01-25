@@ -1,4 +1,4 @@
-package com.kfit.spring_boot_mybatis;
+package com.zqs;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2017年1月1日
  */
 @SpringBootApplication
-@MapperScan("com.kfit.*")//扫描：该包下相应的class,主要是MyBatis的持久化类.
+@MapperScan("com.*") //扫描：该包下相应的class,主要是MyBatis的持久化类.
 public class App {
-	public static void main(String[] args) {
-		SpringApplication.run(App.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(App.class, args);
+    }
 }

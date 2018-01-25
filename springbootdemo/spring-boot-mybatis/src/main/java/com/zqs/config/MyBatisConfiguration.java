@@ -1,4 +1,4 @@
-package com.kfit.spring_boot_mybatis.config;
+package com.zqs.config;
 
 import java.util.Properties;
 

@@ -1,4 +1,4 @@
-package com.kfit.spring_boot_mybatis;
+package com.zqs;
 
 import java.util.List;
 

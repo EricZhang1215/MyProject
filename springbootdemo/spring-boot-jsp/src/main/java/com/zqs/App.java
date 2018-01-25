@@ -1,4 +1,4 @@
-package com.kfit;
+package com.zqs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

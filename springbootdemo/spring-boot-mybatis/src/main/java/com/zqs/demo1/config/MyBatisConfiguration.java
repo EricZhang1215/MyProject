@@ -1,4 +1,4 @@
-package com.zqs.config;
+package com.zqs.demo1.config;
 
 import java.util.Properties;
 

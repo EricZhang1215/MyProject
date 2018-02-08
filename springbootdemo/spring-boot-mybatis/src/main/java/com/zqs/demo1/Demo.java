@@ -1,4 +1,4 @@
-package com.zqs;
+package com.zqs.demo1;
 
 public class Demo {
     private Integer id;

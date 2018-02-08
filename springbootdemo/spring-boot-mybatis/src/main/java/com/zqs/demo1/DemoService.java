@@ -1,4 +1,4 @@
-package com.zqs;
+package com.zqs.demo1;
 
 import java.util.List;
 

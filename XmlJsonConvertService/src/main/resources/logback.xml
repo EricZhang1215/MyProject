@@ -1,0 +1,38 @@
+<configuration>
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>logs/vpmsOpenApi.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>50MB</maxFileSize>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{HH:mm:ss.SSS}] [%thread] [%-5level] [%logger:%line] - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<appender name="async_log"
+		class="ch.qos.logback.classic.AsyncAppender">
+		<discardingThreshold>0</discardingThreshold>
+		<queueSize>512</queueSize>
+		<appender-ref ref="FILE" />
+	</appender>
+
+	<logger name="com.dxc.converter" level="INFO" />
+	<logger name="org.apache.cxf" level="WARN" />
+	<logger name="org.springframework" level="WARN" />
+
+	<!-- INFO level needed to log the SOAP messages -->
+	<logger name="org.apache.cxf.services" level="INFO" />
+
+	<!-- fine tune individual service logging -->
+	<!-- <logger name="org.apache.cxf.services.PRMService.REQ_IN" level="INFO" 
+		/> <logger name="org.apache.cxf.services.PRMService.RESP_IN" level="INFO" 
+		/> <logger name="org.apache.cxf.services.PRMService.FAULT_IN" level="INFO" 
+		/> -->
+	<root level="WARN">
+		<appender-ref ref="async_log" />
+	</root>
+
+</configuration>

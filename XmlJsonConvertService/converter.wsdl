@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://service.converter.dxc.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ConverterService" targetNamespace="http://service.converter.dxc.com">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.converter.dxc.com" elementFormDefault="unqualified" targetNamespace="http://service.converter.dxc.com" version="1.0">
+
+  <xs:element name="convertXMLTemplate" type="tns:convertXMLTemplate"/>
+
+  <xs:element name="convertXMLTemplateResponse" type="tns:convertXMLTemplateResponse"/>
+
+  <xs:element name="convertXml2Json" type="tns:convertXml2Json"/>
+
+  <xs:element name="convertXml2JsonResponse" type="tns:convertXml2JsonResponse"/>
+
+  <xs:element name="postXML2PRM" type="tns:postXML2PRM"/>
+
+  <xs:element name="postXML2PRMResponse" type="tns:postXML2PRMResponse"/>
+
+  <xs:complexType name="convertXml2Json">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="convertXml2JsonResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="postXML2PRM">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="postXML2PRMResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="convertXMLTemplate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="convertXMLTemplateResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="convertXml2Json">
+    <wsdl:part element="tns:convertXml2Json" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="convertXMLTemplateResponse">
+    <wsdl:part element="tns:convertXMLTemplateResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="convertXml2JsonResponse">
+    <wsdl:part element="tns:convertXml2JsonResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="postXML2PRMResponse">
+    <wsdl:part element="tns:postXML2PRMResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="postXML2PRM">
+    <wsdl:part element="tns:postXML2PRM" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="convertXMLTemplate">
+    <wsdl:part element="tns:convertXMLTemplate" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConverterService">
+    <wsdl:operation name="convertXml2Json">
+      <wsdl:input message="tns:convertXml2Json" name="convertXml2Json">
+    </wsdl:input>
+      <wsdl:output message="tns:convertXml2JsonResponse" name="convertXml2JsonResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postXML2PRM">
+      <wsdl:input message="tns:postXML2PRM" name="postXML2PRM">
+    </wsdl:input>
+      <wsdl:output message="tns:postXML2PRMResponse" name="postXML2PRMResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertXMLTemplate">
+      <wsdl:input message="tns:convertXMLTemplate" name="convertXMLTemplate">
+    </wsdl:input>
+      <wsdl:output message="tns:convertXMLTemplateResponse" name="convertXMLTemplateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConverterServiceSoapBinding" type="tns:ConverterService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="convertXml2Json">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="convertXml2Json">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="convertXml2JsonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postXML2PRM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="postXML2PRM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="postXML2PRMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="convertXMLTemplate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="convertXMLTemplate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="convertXMLTemplateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConverterService">
+    <wsdl:port binding="tns:ConverterServiceSoapBinding" name="ConvertServiceImplPort">
+      <soap:address location="http://localhost:8181/service/converter"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

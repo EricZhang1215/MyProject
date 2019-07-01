@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="GBK"?>
+<b:PRMCALO_REC xmlns:b="http://www.csc.smart/bo/schemas/PRMCALO" xmlns:a="http://www.csc.smart/bo/schemas/PRMCALI" xmlns:c="http://www.csc.smart/msp/schemas/MSPContext" xmlns:d="http://www.csc.smart/bo/schemas/Error">
+  <STATUS>0</STATUS>
+  <MORE_IND>N</MORE_IND>
+  <PREMIUM>
+    <ERRCODE>0</ERRCODE>
+    <PDESC />
+    <ZNBAKFLD />
+    <CNTBRANCH>SY</CNTBRANCH>
+    <TTMPRCNO>081000243242</TTMPRCNO>
+    <TOTAL>2700.00</TOTAL>
+    <OCCDATE>20190319</OCCDATE>
+    <INSUREDLIST>
+      <INSURED>
+        <LIFE>01</LIFE>
+        <INSRSKAMNT>
+          <ZNRSKCD02>AACI</ZNRSKCD02>
+          <SUMINS02>100000</SUMINS02>
+        </INSRSKAMNT>
+        <INSRSKAMNT>
+          <ZNRSKCD02>ASCI</ZNRSKCD02>
+          <SUMINS02>400000</SUMINS02>
+        </INSRSKAMNT>
+        <INSRSKAMNT>
+          <ZNRSKCD02>ASLI</ZNRSKCD02>
+          <SUMINS02>101000</SUMINS02>
+        </INSRSKAMNT>
+        <INSRSKAMNT>
+          <ZNRSKCD02>ATCI</ZNRSKCD02>
+          <SUMINS02>500000</SUMINS02>
+        </INSRSKAMNT>
+        <INSRSKAMNT>
+          <ZNRSKCD02>ATLI</ZNRSKCD02>
+          <SUMINS02>101000</SUMINS02>
+        </INSRSKAMNT>
+        <INSRSKAMNT>
+          <ZNRSKCD02>ASJI</ZNRSKCD02>
+          <SUMINS02>101000</SUMINS02>
+        </INSRSKAMNT>
+        <COVERAGELIST>
+          <COVERAGEINFO>
+            <COVERAGE>01</COVERAGE>
+            <RIDER>00</RIDER>
+            <ZNPRDCODE>PWL03AA</ZNPRDCODE>
+            <RCESSAGE>106</RCESSAGE>
+            <RCESSTRM />
+            <PCESSAGE />
+            <PCESSTRM>20</PCESSTRM>
+            <BCESSAGE />
+            <BCESSTRM />
+            <SUMIN>101000</SUMIN>
+            <INSTPRM>1723.00</INSTPRM>
+            <CASHVALUELIST />
+          </COVERAGEINFO>
+          <COVERAGEINFO>
+            <COVERAGE>01</COVERAGE>
+            <RIDER>01</RIDER>
+            <ZNPRDCODE>DD08AA</ZNPRDCODE>
+            <RCESSAGE>25</RCESSAGE>
+            <RCESSTRM />
+            <PCESSAGE>25</PCESSAGE>
+            <PCESSTRM />
+            <BCESSAGE />
+            <BCESSTRM />
+            <SUMIN>400000</SUMIN>
+            <INSTPRM>596.00</INSTPRM>
+            <CASHVALUELIST />
+          </COVERAGEINFO>
+          <COVERAGEINFO>
+            <COVERAGE>01</COVERAGE>
+            <RIDER>02</RIDER>
+            <ZNPRDCODE>ACI15AA</ZNPRDCODE>
+            <RCESSAGE>106</RCESSAGE>
+            <RCESSTRM />
+            <PCESSAGE />
+            <PCESSTRM>20</PCESSTRM>
+            <BCESSAGE />
+            <BCESSTRM />
+            <SUMIN>100000</SUMIN>
+            <INSTPRM>381.00</INSTPRM>
+            <CASHVALUELIST />
+          </COVERAGEINFO>
+        </COVERAGELIST>
+      </INSURED>
+    </INSUREDLIST>
+  </PREMIUM>
+</b:PRMCALO_REC>
+

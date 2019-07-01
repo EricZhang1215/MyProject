@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?><!--(C)Copyright 2019 DXC.technology. All rights reserved.--><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.csc.smart/bo/schemas/PRMCALI" xmlns:mspc="http://www.csc.smart/msp/schemas/MSPContext"><xsd:import namespace="http://www.csc.smart/msp/schemas/MSPContext" schemaLocation="MSPContext.xsd" /><xsd:element xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PRMCALI_REC">
+  <xsd:annotation>
+    <xsd:documentation>
+			* Copyright 1986-2018, Computer Sciences Corporation.
+			******************************************************************
+			******************************************************************
+			*           AMENDMENT  HISTORY
+			******************************************************************
+			* DATE.... VSN/MOD  WORK UNIT    BY....
+			* 31/05/12  01/01   NIF006       Rock Hao Yang Zou/ASIA/CSC (Ch
+			*           Initial Version
+			* 06/08/12  01/01   NIF006       Wei Lu/ASIA/CSC (China)
+			*           UPDATE
+			* 26/02/13  01/01   NIFC20       Wei Lu/ASIA/CSC (China)
+			*           Add source of business
+			* 21/07/18  01/01   NLAM27       Gang Liu/ASIA/CSC (China)
+			*           Modify array structures to cater for MSP2.7.
+			* 31/07/18  01/01   NLAM27       LIU YADONG/CSC
+			*           Retrofit for  MSP v2.7.
+			**DD/MM/YY********************************************************
+</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element ref="mspc:MSPContext" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="PREMIUM">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ZNBAKFLD">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="20"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="CNTBRANCH">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="2"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="TTMPRCNO">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="15"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="CHDRTYPE">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="3"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="OCCDATE">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:integer">
+                  <xsd:totalDigits value="8"/>
+                  <xsd:minInclusive value="0"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="POLICYOWNER">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="OWNERSEL">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="10"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="DOB">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:integer">
+                        <xsd:totalDigits value="8"/>
+                        <xsd:minInclusive value="0"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="AGE">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:integer">
+                        <xsd:totalDigits value="3"/>
+                        <xsd:minInclusive value="0"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="CLTSEX">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="1"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                  <xsd:element name="OCCUP">
+                    <xsd:simpleType>
+                      <xsd:restriction base="xsd:string">
+                        <xsd:maxLength value="4"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="BILLFREQ">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="2"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="SRCEBUS">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="2"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="CNTCURR">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="3"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="BILLCURR">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:maxLength value="3"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:element>
+            <xsd:element name="INSUREDLIST">
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="INSURED" maxOccurs="2">
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="LIFE">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                              <xsd:maxLength value="2"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="LIFCNUM">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                              <xsd:maxLength value="8"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="CLTDOB">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:totalDigits value="8"/>
+                              <xsd:minInclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="INSAGE">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:integer">
+                              <xsd:totalDigits value="3"/>
+                              <xsd:minInclusive value="0"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="SEX">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                              <xsd:maxLength value="1"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="OCCUPD">
+                          <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                              <xsd:maxLength value="4"/>
+                            </xsd:restriction>
+                          </xsd:simpleType>
+                        </xsd:element>
+                        <xsd:element name="PACKAGEINFO">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="ZNPKGCODE">
+                                <xsd:simpleType>
+                                  <xsd:restriction base="xsd:string">
+                                    <xsd:maxLength value="8"/>
+                                  </xsd:restriction>
+                                </xsd:simpleType>
+                              </xsd:element>
+                              <xsd:element name="TOTPRE">
+                                <xsd:simpleType>
+                                  <xsd:restriction base="xsd:decimal">
+                                    <xsd:totalDigits value="18"/>
+                                    <xsd:fractionDigits value="2"/>
+                                  </xsd:restriction>
+                                </xsd:simpleType>
+                              </xsd:element>
+                              <xsd:element name="ZTOTSI">
+                                <xsd:simpleType>
+                                  <xsd:restriction base="xsd:integer">
+                                    <xsd:totalDigits value="18"/>
+                                  </xsd:restriction>
+                                </xsd:simpleType>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="COVERAGELIST">
+                          <xsd:complexType>
+                            <xsd:sequence>
+                              <xsd:element name="COVERAGEINFO" maxOccurs="09">
+                                <xsd:complexType>
+                                  <xsd:sequence>
+                                    <xsd:element name="COVERAGE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                          <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="CCDATE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="8"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="RIDER">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                          <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="ZNPRDCODE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                          <xsd:maxLength value="10"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="SUMIN">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="15"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="ZNDISPER">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:decimal">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:fractionDigits value="2"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="ZNRFAGE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="RCESSAGE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="RCESSTRM">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="PCESSAGE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="PCESSTRM">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="INSTPRM">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:decimal">
+                                          <xsd:totalDigits value="17"/>
+                                          <xsd:fractionDigits value="2"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="JLSEX">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                          <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="ZNJLAGE">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:integer">
+                                          <xsd:totalDigits value="3"/>
+                                          <xsd:minInclusive value="0"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="BENPLN">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                          <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                    <xsd:element name="LIVESNO">
+                                      <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                          <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                      </xsd:simpleType>
+                                    </xsd:element>
+                                  </xsd:sequence>
+                                </xsd:complexType>
+                              </xsd:element>
+                            </xsd:sequence>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:element></xsd:schema>

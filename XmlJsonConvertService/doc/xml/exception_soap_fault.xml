@@ -1,0 +1,13 @@
+<soap:Envelope
+    xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <soap:Fault>
+            <faultcode>soap:Server</faultcode>
+            <faultstring>Fault occurred while processing.</faultstring>
+            <detail>
+                <ns1:Exception
+                    xmlns:ns1="http://service.converter.prm.dxc.com" />
+            </detail>
+        </soap:Fault>
+    </soap:Body>
+</soap:Envelope>

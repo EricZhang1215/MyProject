@@ -1,0 +1,18 @@
+<soap:Envelope
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<b:PRMCALO_REC
+			xmlns:a="http://www.csc.smart/bo/schemas/PRMCALI"
+			xmlns:c="http://www.csc.smart/msp/schemas/MSPContext"
+			xmlns:b="http://www.csc.smart/bo/schemas/PRMCALO"
+			xmlns:d="http://www.csc.smart/bo/schemas/Error">
+			<d:ERROR>
+				<d:STATUS>error</d:STATUS>
+				<d:REASON>
+					<d:ERROR_DESC>系统错误</d:ERROR_DESC>
+					<d:ERROR_EROR>OE003</d:ERROR_EROR>
+				</d:REASON>
+			</d:ERROR>
+		</b:PRMCALO_REC>
+	</soap:Body>
+</soap:Envelope>

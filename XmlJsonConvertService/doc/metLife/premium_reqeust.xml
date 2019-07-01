@@ -1,0 +1,95 @@
+<ns0:ESBEnvelope xmlns:ns0="http://MetLifeEAI.EAISchema">
+	<ESBHeader>
+		<ESBHdVer>20120608_1.1</ESBHdVer>
+		<SrvDate>2019-06-06</SrvDate>
+		<SrvTime>10:46:26.4626</SrvTime>
+		<SenderID>B2B</SenderID>
+		<ReceiverID>LA</ReceiverID>
+		<SrvOpName>PRMService</SrvOpName>
+		<SrvOpVer>20120606_1.1</SrvOpVer>
+		<MsgID>6f243b13-4ec5-4e94-b922-d76d48bb3e87</MsgID>
+		<CorrID>5643c15e-7cac-4f3d-b28e-324348d297c0</CorrID>
+		<ESBRspCode>0</ESBRspCode>
+		<ESBRspDec>Success</ESBRspDec>
+		<ResField1></ResField1>
+		<ResField2></ResField2>
+		<ResField3></ResField3>
+		<ResField4></ResField4>
+		<ResField5></ResField5>
+	</ESBHeader>
+	<MsgBody>
+		<prm:PRMCALI_REC
+			xmlns:prm="http://www.csc.smart/bo/schemas/PRMCALI">
+			<msp:MSPContext
+				xmlns:msp="http://www.csc.smart/msp/schemas/MSPContext">
+				<msp:UserId>MSPNCLA</msp:UserId>
+				<msp:UserPassword>MSPuser1)</msp:UserPassword>
+				<msp:RequestParameters>
+					<msp:RequestParameter value="JH" name="BRANCH" />
+					<msp:RequestParameter value="Y"
+						name="COMMIT_FLAG" />
+					<msp:RequestParameter value="2" name="COMPANY" />
+					<msp:RequestParameter value="Y"
+						name="IGNORE_DRIVER_HELD" />
+					<msp:RequestParameter value="S"
+						name="LANGUAGE" />
+					<msp:RequestParameter value="N"
+						name="SUPPRESS_RCLRSC" />
+				</msp:RequestParameters>
+			</msp:MSPContext>
+			<PREMIUM>
+				<BILLCURR>CNY</BILLCURR>
+				<BILLFREQ>01</BILLFREQ>
+				<SRCEBUS>3</SRCEBUS>
+				<CHDRTYPE />
+				<CNTBRANCH>JH</CNTBRANCH>
+				<CNTCURR>CNY</CNTCURR>
+				<INSUREDLIST>
+					<INSURED>
+						<LIFE>01</LIFE>
+						<LIFCNUM />
+						<CLTDOB>19600704</CLTDOB>
+						<INSAGE>58</INSAGE>
+						<SEX>F</SEX>
+						<OCCUPD>Q301</OCCUPD>
+						<PACKAGEINFO>
+							<TOTPRE>0</TOTPRE>
+							<ZNPKGCODE />
+							<ZTOTSI>0</ZTOTSI>
+						</PACKAGEINFO>
+						<COVERAGELIST>
+							<COVERAGEINFO>
+								<CCDATE>20190606</CCDATE>
+								<COVERAGE>01</COVERAGE>
+								<RIDER>00</RIDER>
+								<ZNPRDCODE>LA12BA</ZNPRDCODE>
+								<SUMIN>4612</SUMIN>
+								<ZNDISPER>1</ZNDISPER>
+								<ZNRFAGE>63</ZNRFAGE>
+								<RCESSAGE>0</RCESSAGE>
+								<RCESSTRM>15</RCESSTRM>
+								<PCESSAGE>0</PCESSAGE>
+								<PCESSTRM>3</PCESSTRM>
+								<INSTPRM>50000.00</INSTPRM>
+								<JLSEX />
+								<ZNJLAGE>0</ZNJLAGE>
+								<BENPLN />
+								<LIVESNO>1</LIVESNO>
+							</COVERAGEINFO>
+						</COVERAGELIST>
+					</INSURED>
+				</INSUREDLIST>
+				<OCCDATE>20190606</OCCDATE>
+				<POLICYOWNER>
+					<OWNERSEL>6000051</OWNERSEL>
+					<DOB>19600704</DOB>
+					<AGE>58</AGE>
+					<CLTSEX>F</CLTSEX>
+					<OCCUP>Q301</OCCUP>
+				</POLICYOWNER>
+				<TTMPRCNO>624000005106</TTMPRCNO>
+				<ZNBAKFLD>Y</ZNBAKFLD>
+			</PREMIUM>
+		</prm:PRMCALI_REC>
+	</MsgBody>
+</ns0:ESBEnvelope>

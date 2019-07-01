@@ -1,0 +1,122 @@
+<ns0:ESBEnvelopeResult
+	xmlns:ns0="http://MetLifeEAI.EAISchema">
+	<ESBHeader>
+		<ESBHdVer>20120608_1.1</ESBHdVer>
+		<SrvDate>2019-06-06</SrvDate>
+		<SrvTime>10:46:26.4626</SrvTime>
+		<SenderID>LA</SenderID>
+		<ReceiverID>B2B</ReceiverID>
+		<SrvOpName>PRMService</SrvOpName>
+		<SrvOpVer>20120606_1.1</SrvOpVer>
+		<MsgID>9fe508a8-c577-4974-a784-dcfa37367263</MsgID>
+		<CorrID>5643c15e-7cac-4f3d-b28e-324348d297c0</CorrID>
+		<ESBRspCode>0</ESBRspCode>
+		<ESBRspDec>Success</ESBRspDec>
+		<ResField1></ResField1>
+		<ResField2></ResField2>
+		<ResField3></ResField3>
+		<ResField4></ResField4>
+		<ResField5></ResField5>
+	</ESBHeader>
+	<MsgBody>
+		<b:PRMCALO_REC
+			xmlns:b="http://www.csc.smart/bo/schemas/PRMCALO"
+			xmlns:a="http://www.csc.smart/bo/schemas/PRMCALI"
+			xmlns:c="http://www.csc.smart/msp/schemas/MSPContext"
+			xmlns:d="http://www.csc.smart/bo/schemas/Error">
+			<STATUS>0</STATUS>
+			<MORE_IND>N</MORE_IND>
+			<PREMIUM>
+				<ERRCODE>0</ERRCODE>
+				<PDESC></PDESC>
+				<ZNBAKFLD>Y</ZNBAKFLD>
+				<CNTBRANCH>JH</CNTBRANCH>
+				<TTMPRCNO>624000005106</TTMPRCNO>
+				<TOTAL>50000.00</TOTAL>
+				<OCCDATE>20190606</OCCDATE>
+				<INSUREDLIST>
+					<INSURED>
+						<LIFE>01</LIFE>
+						<COVERAGELIST>
+							<COVERAGEINFO>
+								<COVERAGE>01</COVERAGE>
+								<RIDER>00</RIDER>
+								<ZNPRDCODE>LA12BA</ZNPRDCODE>
+								<RCESSAGE></RCESSAGE>
+								<RCESSTRM> 15</RCESSTRM>
+								<PCESSAGE></PCESSAGE>
+								<PCESSTRM> 3</PCESSTRM>
+								<BCESSAGE></BCESSAGE>
+								<BCESSTRM></BCESSTRM>
+								<SUMIN>4612</SUMIN>
+								<INSTPRM> 50000.00</INSTPRM>
+								<CASHVALUELIST>
+									<CVYEAR>
+										<YEAR>1</YEAR>
+										<ZDCSHVA> 34984.71</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>2</YEAR>
+										<ZDCSHVA> 79237.79</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>3</YEAR>
+										<ZDCSHVA> 129118.34</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>4</YEAR>
+										<ZDCSHVA> 136838.43</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>5</YEAR>
+										<ZDCSHVA> 140436.30</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>6</YEAR>
+										<ZDCSHVA> 143801.77</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>7</YEAR>
+										<ZDCSHVA> 146922.46</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>8</YEAR>
+										<ZDCSHVA> 149785.60</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>9</YEAR>
+										<ZDCSHVA> 152378.04</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>10</YEAR>
+										<ZDCSHVA> 154686.05</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>11</YEAR>
+										<ZDCSHVA> 156695.15</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>12</YEAR>
+										<ZDCSHVA> 158389.85</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>13</YEAR>
+										<ZDCSHVA> 159753.76</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>14</YEAR>
+										<ZDCSHVA> 160769.71</ZDCSHVA>
+									</CVYEAR>
+									<CVYEAR>
+										<YEAR>15</YEAR>
+										<ZDCSHVA>0.00</ZDCSHVA>
+									</CVYEAR>
+								</CASHVALUELIST>
+							</COVERAGEINFO>
+						</COVERAGELIST>
+					</INSURED>
+				</INSUREDLIST>
+			</PREMIUM>
+		</b:PRMCALO_REC>
+	</MsgBody>
+</ns0:ESBEnvelopeResult>

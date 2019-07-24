@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSO Client appa</title>
+</head>
+<body>
+    <h1>SSO Client appa ==》》 appb</h1>
+    <a href="http://127.0.0.1:9003/appb/index.html">访问 appb </a>
+    <div class="container authenticated">
+        Logged in as: <span id="user"></span>
+        <div>
+            <button onClick="logout()" class="btn btn-primary">Logout</button>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var logout = function() {
+        $.post("/logout", function() {
+            $("#user").html('');
+            $(".unauthenticated").show();
+            $(".authenticated").hide();
+        });
+        return true;
+    }
+</script>
+</html>

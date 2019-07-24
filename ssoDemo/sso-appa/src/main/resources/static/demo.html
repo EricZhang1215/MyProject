@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+</head>
+<body>
+<div class="cookie"></div>
+<button class="sendGet">发送get请求</button>
+<button class="sendPost">发送post请求</button>
+<table class="table">
+    <th>姓名</th>
+    <th>密码</th>
+</table>
+<div class="get"></div>
+</body>
+<script type="text/javascript">
+    let _csrf = getCookie('X-CSRF-TOKEN');
+    $('.sendGet').click(function () {
+        $.ajax({
+            type: 'get',
+            url: 'http://127.0.0.1:9002/appa/user/me',
+            xhrFields: {
+                withCredentials: true
+            },
+            data: '',
+            success: function (data) {
+                let str = JSON.stringify(data)
+                $('.get').text(str)
+                console.log(data)
+            }
+        })
+    })
+    $('.sendPost').click(function () {
+        $.ajax({
+            type: 'post',
+            contentType: 'application/json',
+            headers: {
+                'X-CSRF-TOKEN': _csrf
+            },
+            xhrFields: {
+                withCredentials: true
+            },
+            url: 'http://127.0.0.1:9002/appa/user/getUserList',
+            data: '',
+            success: function (data) {
+                let mydata = data['data']
+                mydata.forEach((val) => {
+                    let tr = $('<tr></tr>')
+                    let td = $('<td>' + val.username + '</td>')
+                    let td2 = $('<td>' + val.password + '</td>')
+                    $(tr).append(td)
+                    $(tr).append(td2)
+                    $('.table').append(tr)
+                })
+                console.log(data)
+            }
+        })
+    })
+
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    }
+</script>
+</html>

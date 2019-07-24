@@ -33,6 +33,12 @@ public class OperationLogAop {
 	@Autowired
 	private TransactionTemplate txTemplate;
 
+	/**
+	 *  环绕通知   拦截指定的切点
+	 * @param p
+	 * @param operationlog
+	 * @throws Throwable
+	 */
 	@Around(value = "@annotation(operationlog)")
 	public void logAround(final ProceedingJoinPoint p,final com.csp.operationlog.aspect.annotation.OperationLog operationlog) throws Throwable {
 		OperationType type = operationlog.type();

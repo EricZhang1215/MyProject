@@ -1,0 +1,39 @@
+参考https://blog.csdn.net/weixin_40773253/article/details/84589785
+启动sso-appa,sso-appb,sso-service
+登陆localhost:9002/appa
+注册CSRF-TOKEN
+跳转至9001服务器
+1.加载CsrfHeaderFilter
+  确认分别有 CSRF-TOKEN X-CSRF-TOKEN 判断相等。
+
+2.走SsoSecurityConfig configure方法
+  引导到登录页 -- 进行form表单的验证（MyUserDetailsService）-- 授权登陆
+
+从appa跳转appb
+经过SsoApprovalEndpoint和SsoSpelView自动确认授权
+
+认证服务器
+启动加载
+SsoSecurityConfig：
+configure（AuthenticationManagerBuilder）方法：定义的usersevices来验证用户。
+configure（HttpSecurity）方法：定义表单登录方式+自定义成功跳转方法+自定义登录页面  登陆时进行跳转和身份验证。
+
+SsoAuthorizationServerConfig
+configure方法：创建客户端进行授权注册。
+JWT令牌的配置：设置密钥,生成令牌，安全配置
+
+MyUserDetailsService：
+自己定义的userservice。在SsoSecurityConfig里调用使用。
+
+CstAuthenticationFailureHandler
+自定义失败跳转方法。在SsoSecurityConfig里调用使用。
+
+
+CsrfHeaderFilter
+由于前后端分离的项目，没有session的概念，也无法从session中获取信息，把csrfToken放到cookie中
+生成一个token，往cookie中加csrfToken的过滤器，该过滤器把csrfToken的信息放到cookie,并把cookie传到前台
+在SsoSecurityConfig里调用使用。
+
+客户端
+启动加载
+CsrFilterConfig：注册CSRFCOOKIE过滤器

@@ -1,0 +1,46 @@
+
+<!-- 单独HTML文件，如果需要直接在softphone中include，可以用此文件-->
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<META http-equiv="Pragma"  content="No-cache"/>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <link rel="stylesheet" href="${request.contextPath}/static/css/videoModule.css">
+    <meta charset="UTF-8">
+    <title>视频客服</title>
+
+</head>
+<body>
+    <div>
+
+        <embed id="ring" src="${request.contextPath}/static/mp3/ring.mp3" autostart="false"  hidden="true" loop="3"></embed>
+        <input type="hidden" name ="agentCode" id="agentCode" value="${agentCode!}"/>
+        <input type="hidden" name = "userId" id="userId" value="${userId!}"/>
+        <input type="hidden" name = "csOrgnPartyId" id="csOrgnPartyId" value="${csOrgnPartyId!}"/>
+        <input type="button" class="actionBtn" id="getThru" value="接通"/>
+        <input type="button" class="actionBtn" id="hangUp" value="挂断"/>
+        <input type="button" class="actionBtn" id="busy" value="示忙"/>
+        <input type="button" class="actionBtn" id="notBusy" value="示闲"/>
+        <input type="button" class="actionBtn" id="satisfaction" value="满意度"/>
+        <input type="button" class="actionBtn" id="startSnapshot" value="截图"/>
+        <!--<input type="button" class="actionBtn" id="getSnapshot" value="获取截图"/>-->
+
+    </div>
+
+    <div ID="CheckIEStatus" align="center" style="z-index:10000; display:none; background:#999; position:absolute; left:0px; top:0px; width:100%; height:100%; border:1px solid #F00; ">
+        <h1 style="font-size: 50px">ActiveX插件只支持IE,请用IE打开网页</h1>
+    </div>
+    <object ID="session" CLASSID="CLSID:4BE7ADC2-1750-4A36-8681-0EA5E2B297F7"
+            codebase="${request.contextPath}/static/sdk/LiteAvRS.cab#version=2,3,0,0"
+            width="0"
+            height="0"
+            events="True"></object>
+</body>
+    <script type="text/javascript" src="${request.contextPath}/static/js/json2.js"></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/actions.js"></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/videoModule.js"></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/html5shiv.js"></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/respond.min.js"></script>
+</html>

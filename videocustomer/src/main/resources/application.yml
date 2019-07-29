@@ -1,0 +1,100 @@
+#测试--AES加密密码--暂时不区分生产或测试
+#AESCode : 15197f6c8e8df174a616b2ea3e441138
+
+#生产--AES加密密码
+AESCode : 6c2cd58191098462663863b8ec597305
+
+#appID *代码中暂时没有用到
+#测试
+#appId : wxcfb5ee12c117mqUrl6bb1
+#生产
+appId : wxa6cda9559941b008
+
+#腾讯平台完整地址
+getAppIdUrl : ${notAppIdUrl}${appId}/getSession
+
+#测试
+#notAppIdUrl : https://testcloud.tenpay.com/
+#生产
+notAppIdUrl : https://car.tenpay.com/
+
+mqUrl : ${notAppIdUrl}proxy/${appId}/getMQ
+
+putMqUrl : ${notAppIdUrl}proxy/${appId}/putMQ
+
+reidsTimeOut : 86400
+
+#满意度消息标记
+satisfactionCode : 95D74152AA10A126EEF40CB3A3397ED5
+
+# 截图消息标记
+snapshotCode: FB11FDEBF98E9473D5EF45F67FDADC0A
+
+#获取流信息调用次数
+forCount : 500
+
+#获取流信息间隔时间(毫秒)
+sleepTime : 50
+
+
+winFilePath : E:/Test
+
+linuxFilepath : /mnt
+
+
+#WEB 配置
+spring:
+  freemarker:
+    request-context-attribute: request
+    suffix: .html
+    content-type: text/html
+    cache: false
+    #template-loader-path : classpath:/templates/
+    charset: UTF-8
+    enabled: true
+    allow-request-override: false
+    allow-session-override: false
+    settings:
+      template_update_delay : 0
+  devtools:
+    restart:
+      additional-paths: src/main/java
+      exclude: templates/**,static/**
+      enabled : false
+  mvc:
+      static-path-pattern: /static/**
+
+  #Redis 配置
+  redis:
+    database: 0
+#    cluster:
+#      max-redirects: 1
+#      nodes:
+#      -127.0.0.1:6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 0
+        max-wait: -1
+        min-idle: 0
+    timeout: 1000
+#    001:内网地址：10.253.162.18 公网地址:116.62.250.172
+#    002内网地址：10.253.117.89 公网地址:116.62.73.201
+#     华为：10.2.225.233
+    host: 10.253.117.89
+    password: 2wsx@WSX
+#    password: 123456
+#    host: 127.0.0.1
+    port: 6379
+
+
+
+
+
+
+
+
+
+
+
+

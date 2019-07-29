@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="${request.contextPath}/static/js/pusher_player.js?rnd=2" charset="utf-8" ></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/json2.js"></script>
+    <script type="text/javascript" src="${request.contextPath}/static/js/jquery/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        var url = "http://10.2.44.38:8080";
+        var params = "{\"cmd\": 11 }";
+        function onloudMessage(){
+            alert("123");
+            $.ajax({
+                type : "POST",
+                url : url + "/videoCustomer/",
+                data : JSON.stringify(params),
+                contentType : "application/json",
+                dataType : "json",
+                complete:function(msg) {
+                    alert(msg);
+                    layer.msg("报修成功",{time:2000});
+                    layer.close(madd_data.w_c_index);
+                }
+            });
+        }
+    </script>
+    <meta charset="UTF-8">
+    <title>视频客服</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="2">
+            座席流信息:
+            <input size="90" id="PusherUrlTextField" value="">
+            <input type=submit value="StartPush" onClick="doStartPush(document.getElementById('PusherUrlTextField').value);">
+            <input type=submit value="StopPush" onClick="doStopPush();">
+            <input type=submit value="获取推流地址" onClick="getNewPushUrl();">
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2">
+            客户流信息:
+            <input size="90" id="PlayerUrlTextField" value="">
+            <input type=submit value="StartPlay" onClick="doStartPlay(document.getElementById('PlayerUrlTextField').value);">
+            <input type=submit value="StopPlay" onClick="doStopPlay();">
+        </td>
+    </tr>
+
+
+    <tr>
+        <td >
+            座席视频区域<br/>
+            <object ID="pusher" CLASSID="CLSID:01502AEB-675D-4744-8C84-9363788ED6D6"
+                    codebase="https://car.tenpay.com/static/LiteAVAX.cab"
+                    width="480"
+                    height="360"></object>
+        </td>
+        <td >
+            客户视频区域<br />
+            <object ID="player" CLASSID="CLSID:99DD15EF-B353-4E47-9BE7-7DB4BC13613C"
+                    codebase="https://car.tenpay.com/static/LiteAVAX.cab"
+                    width="480"
+                    height="360"
+                    events="True"></object>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <input type="submit" value="签入" onclick="onloudMessage();">
+
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>

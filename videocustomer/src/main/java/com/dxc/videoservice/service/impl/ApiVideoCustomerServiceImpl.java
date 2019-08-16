@@ -162,7 +162,9 @@ public class ApiVideoCustomerServiceImpl implements ApiVideoCustomerService {
             String sign = getSign();
             Map<String, Object> params = new HashMap<>();
             params.put("sign",sign );
+            LOGGER.info("====getMQMessage：sign="+sign);
             JSONObject retJson = HttpsUtils.doGet(getMqUrl,params);
+            LOGGER.info("====getMQMessage：start");
             //判断接口返回信息
             if(retJson != null){
                 LOGGER.info("查询getMQ返回：{}",retJson.toJSONString());
@@ -172,11 +174,13 @@ public class ApiVideoCustomerServiceImpl implements ApiVideoCustomerService {
                 retJson.put("crateTime", sdf.format(new Date()));
                 if(cmd == 11){
                     //判断呼叫理赔座席放入队列
-                    LOGGER.info("----------------getMQ_Return_Data：{}",retJson.toJSONString());
-                    LOGGER.info("----------------getMQ_Return_Data_ext：{}",retJson.getString("ext"));
+//                    LOGGER.info("----------------getMQ_Return_Data：{}",retJson.toJSONString());
+//                    LOGGER.info("----------------getMQ_Return_Data_ext：{}",retJson.getString("ext"));
                     //振铃事件
-                    redisTemplate.opsForList().leftPush("ring_agent:cmd_type_11:ext:"+retJson.getString("ext"), retJson.toString());
-                    LOGGER.info("=======getMQMessage==========write_redis_List_Message==========ring_agent:cmd_type_11:sid:"+retJson.getString("sid")+":ext:"+retJson.getString("ext"));
+//                    redisTemplate.opsForList().leftPush("ring_agent:cmd_type_11:ext:"+retJson.getString("ext"), retJson.toString());
+//                    LOGGER.info("=======getMQMessage==========write_redis_List_Message==========ring_agent:cmd_type_11:sid:"+retJson.getString("sid")+":ext:"+retJson.getString("ext"));
+                    redisTemplate.opsForList().leftPush("ring_agent:cmd_type_11", retJson.toString());
+                    LOGGER.info("写redis队列振铃消息ring_agent:cmd_type_11：{}",retJson.getString("sid"));
                     //记录一个string类型数据
                     stringRedisTemplate.opsForValue().set("cmd_type_"+retJson.getString("cmd")+":"+retJson.getString("sid"), retJson.toString(), Long.valueOf(reidsTimeOut),TimeUnit.SECONDS);
                 }else{
@@ -187,6 +191,7 @@ public class ApiVideoCustomerServiceImpl implements ApiVideoCustomerService {
                 retMap.put("sid",retJson.getString("sid"));
                 retMap.put("cmd",retJson.getString("cmd"));
             }
+            LOGGER.info("====getMQMessage：end");
         } catch (Exception e) {
             LOGGER.error("获取队列消息异常：",e);
         }
@@ -321,39 +326,13 @@ public class ApiVideoCustomerServiceImpl implements ApiVideoCustomerService {
     @Override
     public Map<String, String> getRedisMS(MessageQueueVo messageQueueVo) {
         Map<String, String> retMap = new HashMap<String, String>();
+        LOGGER.info("==getRedisMS====messageQueueVo.getCmd():"+messageQueueVo.getCmd());
         try {
              if(messageQueueVo.getCmd() == 11L){
-                 Object returnVal = null;
-                if(Long.valueOf(messageQueueVo.getExt()) == 10000L || Long.valueOf(messageQueueVo.getExt()) == 410000L){//进入河南区域中心或者分中心座席
-                    String[] arrayExt = {"410000","340000","630000","420000","620000",
-                                        "640000","610000","40000","140000","60000",
-                                        "10000","10000","130000","370000","210000",
-                                        "220000","230000","150000","650000","120000",
-                                        "210200"};
-                    for(int i=0;i<arrayExt.length;i++){
-                        String ext = arrayExt[i];
-                        returnVal = redisTemplate.opsForList().rightPop("ring_agent:cmd_type_11:ext:"+ext);
-                        LOGGER.info("messageQueueVo.getExt()="+messageQueueVo.getExt()+"==GetRedisMS.Key=="+"ring_agent:cmd_type_11:ext:"+ext+"::::GetRedisMS.Value=="+returnVal);
-                        if(returnVal!=null) break;
-                    }
-                }
-                else if(Long.valueOf(messageQueueVo.getExt()) == 440300L){//进入深圳座席
-                     String[] arrayExt = {"440300","330200","350200","430000","530000",
-                                         "450000","510000","500000","320000","350000",
-                                         "520000","310000","350000","520000","310000",
-                                         "370200","330000","360000","440000","460000",
-                                         "540000","110000","areacode"};
-                     for(int i=0;i<arrayExt.length;i++){
-                         String ext = arrayExt[i];
-                         returnVal = redisTemplate.opsForList().rightPop("ring_agent:cmd_type_11:ext:"+ext);
-                         LOGGER.info("messageQueueVo.getExt()="+messageQueueVo.getExt()+"==GetRedisMS.Key=="+"ring_agent:cmd_type_11:ext:"+ext+"::::GetRedisMS.Value=="+returnVal);
-                         if(returnVal!=null) break;
-                     }
-                 }
-
-                 if(returnVal != null) {
-                     String rightPop = returnVal.toString();
-                     LOGGER.info("ring_agent:cmd_type_11:ext:"+messageQueueVo.getExt()+"==========================rightPop:"+rightPop);
+                 Object type11 = redisTemplate.opsForList().rightPop("ring_agent:cmd_type_11");
+                 LOGGER.info("通过调用getRedisMS把写redis队列振铃消息读出ring_agent:cmd_type_11:{}",type11.toString());
+                 if(type11 != null) {
+                     String rightPop = type11.toString();
                      if (rightPop != null) {
                          if (StringUtils.isNotBlank(rightPop)) {
                              JSONObject retJson = JSON.parseObject(rightPop);
@@ -366,6 +345,7 @@ public class ApiVideoCustomerServiceImpl implements ApiVideoCustomerService {
                              //判断是否为用户挂断电话：
                              String get19Value = stringRedisTemplate.opsForValue().get("cmd_type_19:"+retJson.getString("sid"));
                              String get17Value = stringRedisTemplate.opsForValue().get("cmd_type_17:"+retJson.getString("sid"));
+                             LOGGER.info("==getRedisMS==sid:"+retJson.getString("sid")+"==get19Value:"+get19Value+",get17Value:"+get17Value);
                              if(StringUtils.isNotBlank(get17Value) || StringUtils.isNotBlank(get19Value) ){
                                  retMap.put("code", "1");
                              }

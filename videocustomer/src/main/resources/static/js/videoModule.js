@@ -13,9 +13,9 @@ var status = "";//截图是否成功状态标识
 
 var conf = {
     //阿里云生产地址：
-    serverHost : 'http://47.96.246.139:80/videocustomer',
+    //serverHost : 'http://47.96.246.139:80/videocustomer',
     //测试环境地址：
-    //serverHost : 'http://9.1.120.116:8080/videocustomer',
+    serverHost : 'http://9.1.120.116:8080/videocustomer',
     //本地测试地址
     //serverHost : 'http://127.0.0.1:8080/videoCustomer',
 

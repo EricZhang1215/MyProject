@@ -11,3 +11,256 @@ Username/password : rsingh425/rsingh425
 Urls
 Publisher : https://172.31.30.186:9443/publisher
 Store : https://172.31.30.186:9443/store
+
+{
+  "PGpvcPolicyCreateContractServiceInputBean": {
+    "authenticationInfo": {
+      "username": "underwr1"
+    },
+    "checkclientInputbean": {
+      "cltdobxDisp": "03/03/1992",
+      "gender": "M",
+      "secuityno": "1126"
+    },
+    "fPClientCreateInput": {
+      "authenticationInfo": {
+        "username": "underwr1"
+      },
+      "s2480": {
+        "actionKey": "PFKEY0",
+        "clttwo": "",
+        "action": "A",
+        "secuityno": "",
+        "activeField": ""
+      },
+      "s2465": {
+        "actionKey": "",
+        "servbrh": "10",
+        "startDateDisp": "",
+        "lsurname": "BHoang Vu",
+        "lgivname": "Nguyen",
+        "salutl": "",
+        "cltsex": "M",
+        "marryd": "",
+        "cltaddr01": "61 phan van han",
+        "cltaddr02": "11",
+        "cltaddr03": "700000",
+        "cltaddr04": "VietNam",
+        "cltaddr05": "Ho Chi Minh",
+        "cltpcode": "",
+        "ctrycode": "SGP",
+        "addrtype": "",
+        "cltphone01": "",
+        "cltphone02": "",
+        "nmfmt": "",
+        "natlty": "VN",
+        "secuityno": "",
+        "idtype": "",
+        "zprovince": "",
+        "zseqno": "",
+        "occpcode": "",
+        "language": "E",
+        "statcode": "",
+        "docno": "",
+        "cltdodxDisp": "",
+        "soe": "",
+        "cltdobxDisp": "04/10/1993",
+        "birthp": "HCM",
+        "vip": "",
+        "mailing": "",
+        "dirmail": "",
+        "ukPensionInd": "",
+        "racrind": "",
+        "brupind": "",
+        "rextrfld": "",
+        "clprfind": "",
+        "zdoctind": "Y",
+        "taxflag": "",
+        "cltstat": "",
+        "rmblphone": "",
+        "rinternet": "",
+        "rinternet2": "",
+        "clnthistInd": "",
+        "sib001Flag": "",
+        "amlstatus": "",
+        "zkanasurname": "",
+        "zkanagivname": "",
+        "zkanacltaddr01": "",
+        "zkanacltaddr02": "",
+        "zkanacltaddr03": "",
+        "zkanacltaddr04": "",
+        "zkanacltaddr05": "",
+        "excep": "",
+        "polownind": "",
+        "addrinda": "",
+        "optind": "",
+        "abusnumFlag": "",
+        "abusnum": "",
+        "branchid": "",
+        "cltphoneidd": "",
+        "cltphone02idd": "",
+        "cltphone01idd": "",
+        "birthcountry": "",
+        "cntryState": "",
+        "fatcaInd": "",
+        "zdlind": "",
+        "faxno": "",
+        "prefconmtd": "",
+        "dirmktmtd": "",
+        "zstates": "",
+        "ztown": "",
+        "fundadminflag": "",
+        "idExpireDateDisp": "",
+        "isPermanentID": "",
+        "company": "",
+        "lsmcInd": "",
+        "clnduplInd": "",
+        "alteradd": "",
+        "activeField": ""
+      },
+      "s2500": {
+        "actionKey": "PFKEY10"
+      },
+      "s2501": {
+        "declGrSalary": "100000",
+        "emprTaxRef": "a",
+        "evidDateDisp": "01012019",
+        "incomeDesc": "A",
+        "payrollno": "1",
+        "pensionsInd": "Y",
+        "prasInd": "G",
+        "salCurr": "SGD",
+        "taxYear": "10"
+      }
+    },
+    "ppvcNewPolicyCreateContractInput": {
+      "authenticationInfo": {
+        "username": "underwr1"
+      },
+      "s0017": {
+        "screenName": "S0017"
+      },
+      "s4014": {
+        "agntsel": "10000350",
+        "ownersel": "",
+        "ccdateDisp": "01/11/2019",
+        "crdateDisp": "01/11/2019",
+        "declareExpToDisp": "01/11/2019",
+        "zcomtyp": "G",
+        "zstaffcd": "700001"
+      },
+      "s4033": {},
+      "s4817_1": {},
+      "s8301": {
+        "rimeth": "0"
+      },
+      "sm414": {
+        "sm414screensfl": {
+          "attributeList": [
+            {
+              "key": "sm414screensfl.secuityno_R1",
+              "value": "1123"
+            }
+          ]
+        }
+      },
+      "sp003": {
+        "capcty": "1600",
+        "cover": "CO",
+        "dpflg": "D",
+        "mcitype": "MZ801",
+        "regno": "25325235325",
+        "stotsi": "10000",
+        "usefor": "AT",
+        "vehcls": "P0",
+        "yrmanf": "2019",
+        "zncblind": "F",
+        "zvhbod": "SALOON",
+        "zncbload": "10"
+      },
+      "sp003_1": {},
+      "sr410": {},
+      "s4049": "P",
+      "s4817": {},
+      "sr812": {}
+    },
+    "receiptcreateInput": {
+      "authenticationInfo": {
+        "username": "underwr1"
+      },
+      "s0017": {
+        "screenName": "S0017"
+      },
+      "s2067": {
+        "bankcode": "01",
+        "cownsel": ""
+      },
+      "s2610": [
+        {
+          "s2610screensfl": {
+            "attributeList": [
+              {
+                "key": "s2610screensfl.sacscode_R1",
+                "value": "FG"
+              },
+              {
+                "key": "s2610screensfl.sacstypw_R1",
+                "value": "PP"
+              },
+              {
+                "key": "s2610screensfl.entity_R1",
+                "value": ""
+              },
+              {
+                "key": "s2610screensfl.origamt_R1",
+                "value": "1113.07"
+              },
+              {
+                "key": "s2610screensfl.trandesc_R1"
+              },
+              {
+                "key": "s2610screensfl.slrate_R1"
+              }
+            ]
+          }
+        },
+        {
+          "msgresult": "Y"
+        }
+      ],
+      "sr25c": {
+        "sr25cscreensfl": {
+          "attributeList": {
+            "key": "sr25cscreensfl.aline_R1",
+            "value": "abc"
+          }
+        }
+      },
+      "sr289": [
+        {
+          "marryflag": "G",
+          "rfnum": "10000277",
+          "rfcode": "AG",
+          "sr289screensfl": {
+            "attributeList": [
+              {
+                "key": "sr289screensfl.paytype_R1",
+                "value": "1"
+              },
+              {
+                "key": "sr289screensfl.docorigamt_R1",
+                "value": "1113.07"
+              },
+              {
+                "key": "sr289screensfl.zchqtyp_R1",
+                "value": ""
+              }
+            ]
+          },
+          "actionKey": "PFKEY09"
+        },
+        {}
+      ]
+    }
+  }
+}

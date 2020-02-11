@@ -1,0 +1,13 @@
+Endpoint address: http://lb-geallegro-738950790.ap-southeast-1.elb.amazonaws.com/integral/ge-production/polisywebservices/PVPMCreateService
+WADL : http://lb-geallegro-738950790.ap-southeast-1.elb.amazonaws.com/integral/ge-production/polisywebservices/PVPMCreateService?_wadl
+Swagger : http://lb-geallegro-738950790.ap-southeast-1.elb.amazonaws.com/integral/ge-production/polisywebservices/PVPMCreateService/api-docs?url=/integral/ge-production/polisywebservices/PVPMCreateService/swagger.json
+ 
+
+
+
+OpenVPN : 13.229.207.1
+Username/password : rsingh425/rsingh425
+
+Urls
+Publisher : https://172.31.30.186:9443/publisher
+Store : https://172.31.30.186:9443/store
